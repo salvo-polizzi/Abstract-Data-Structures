@@ -36,6 +36,8 @@ class List{
 
         bool isEmpty() {return head == nullptr;}
 
+        Node<T>* getHead() {return this->head;}
+
         void insertHead(T val) {
             if(this->isEmpty()) {
                 head = new Node<T>(val);
