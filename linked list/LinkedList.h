@@ -15,7 +15,7 @@ class Node{
     public:
         Node(T key): val(key), next(nullptr) {}
 
-        T getKey() {return this->key;}
+        T getVal() {return this->val;}
 
         Node<T>* getNext() {return this->next;}
 
