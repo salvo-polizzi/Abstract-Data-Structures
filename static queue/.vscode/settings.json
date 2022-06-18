@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "iostream": "cpp",
+        "__tuple": "cpp",
+        "array": "cpp",
+        "iosfwd": "cpp"
+    }
+}
