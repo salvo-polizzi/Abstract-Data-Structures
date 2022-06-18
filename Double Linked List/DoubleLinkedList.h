@@ -15,7 +15,7 @@ class Node{
     public:
         Node(T key): val(key), next(nullptr), prev(nullptr) {}
 
-        T getKey() {return this->key;}
+        T getVal() {return this->val;}
 
         Node<T>* getNext() {return this->next;}
 
@@ -35,6 +35,9 @@ class List{
         List(): head(nullptr), tail(nullptr) {}
 
         bool isEmpty() {return head == nullptr && head == tail;}
+
+        Node<T>* getHead() {return this->head;}
+        Node<T>* getTail() {return this->tail;}
 
         void insertHead(T val) {
             if(this->isEmpty()) {
