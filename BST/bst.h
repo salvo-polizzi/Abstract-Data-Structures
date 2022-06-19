@@ -171,7 +171,7 @@ class BST{
                 return max(ptr->left);
             
             BSTNode<T>* y = ptr->parent;
-            while(ptr && ptr == y->left) {
+            while(y && ptr == y->left) {
                 ptr = y;
                 y = y->parent;
             }
