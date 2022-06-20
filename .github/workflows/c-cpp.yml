@@ -1,18 +1,18 @@
-name: CI
+name: C/C++ CI
+
 
 on:
   push:
-    branches:
-    - '**'
+    branches: [ master ]
   pull_request:
-    branches: [main]
+    branches: [ master ]
 
 jobs:
   build:
+
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v1
-      - name: install g++
-        run: sudo apt install -y g++
-      - name: check build
-        run: source ./compile.sh
+    - uses: actions/checkout@v3
+    - name: Setup C/C++ Compiler
+      uses: rlalik/setup-cpp-compiler@v1.1
