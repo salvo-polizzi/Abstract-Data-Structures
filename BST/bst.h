@@ -254,4 +254,22 @@ class BST{
             deleted = remove(next);
             return deleted;
         }
+
+        int heigth(BSTNode<T>* ptr) {
+            if(!ptr)
+                return 0;
+            
+            int leftHeigth = heigth(ptr->left);
+            int rightHeigth = heigth(ptr->right);
+
+            if(leftHeigth > rightHeigth)
+                return leftHeigth + 1;
+            else
+                return rightHeigth + 1;
+        }
+
+        int heigth() {return heigth(root);}
+
+
+        
 };

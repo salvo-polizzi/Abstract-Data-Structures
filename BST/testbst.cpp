@@ -3,11 +3,13 @@
 int main() {
     BST<int> bst;
 
-    bst.insert(24241);
+    
     bst.insert(3);
     bst.insert(241);
     bst.insert(432);
-
+    bst.insert(24241);
+    
+    cout << "bst with heigth: " << bst.heigth() << endl;
     bst.inorder();
     cout << endl;
 
@@ -17,7 +19,8 @@ int main() {
     bst.remove(241);
     bst.remove(23213);
     bst.remove(432);
-
+    
+    cout << "bst with heigth: " << bst.heigth() << endl;
     bst.inorder();
     cout << endl;
 
