@@ -20,7 +20,10 @@ class Node{
         Node<T>* getNext() {return this->next;}
 
         friend ostream& operator<<(ostream& os, Node<T>* nodo) {
-            os << "@node " << &nodo << ", val = " << nodo->val;
+            if(nodo)
+                os << nodo->val << " ";
+            else
+                os << "No existing Node" << endl;
             return os;
         }
 };
@@ -34,7 +37,7 @@ class List{
     public:
         List(): head(nullptr), tail(nullptr) {}
 
-        bool isEmpty() {return head == nullptr && head == tail;}
+        bool isEmpty() {return head == nullptr;}
 
         Node<T>* getHead() {return this->head;}
         Node<T>* getTail() {return this->tail;}
@@ -59,14 +62,6 @@ class List{
                 return;
             }
 
-            if(head == tail) {
-                Node<T>* ptr = head;
-                head = nullptr;
-                tail = nullptr;
-
-                delete ptr;
-                return;
-            }
             
             Node<T>* toInsert = new Node<T>(val);
             toInsert->prev = tail;
@@ -117,6 +112,14 @@ class List{
                 return;
             }
 
+            if(head == tail) {
+                Node<T>* ptr = head;
+                head = nullptr;
+                tail = nullptr;
+                delete ptr;
+                return;
+            }
+
             Node<T>* ptr = head;
             head->next->prev = nullptr;
             head = head->next;
@@ -127,6 +130,15 @@ class List{
         void removeTail() {
             if(this->isEmpty()) {
                 cout << "Empty List! Nothing to remove" << endl;
+                return;
+            }
+
+
+            if(head == tail) {
+                Node<T>* ptr = head;
+                head = nullptr;
+                tail = nullptr;
+                delete ptr;
                 return;
             }
 
