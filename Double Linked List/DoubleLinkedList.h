@@ -58,6 +58,15 @@ class List{
                 tail = head;
                 return;
             }
+
+            if(head == tail) {
+                Node<T>* ptr = head;
+                head = nullptr;
+                tail = nullptr;
+
+                delete ptr;
+                return;
+            }
             
             Node<T>* toInsert = new Node<T>(val);
             toInsert->prev = tail;
@@ -161,7 +170,7 @@ class List{
 
 
 
-        friend ostream& operator<<(ostream& os, List<T>& lista) {
+        friend ostream& operator<<(ostream& os, const List<T>& lista) {
             Node<T>* ptr = lista.head;
             os << "List Head: " << ptr << endl;
             while(ptr) {
